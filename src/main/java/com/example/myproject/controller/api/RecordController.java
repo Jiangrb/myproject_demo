@@ -2,6 +2,7 @@ package com.example.myproject.controller.api;
 
 import com.example.myproject.services.RecordService;
 import com.example.myproject.vo.Record;
+import com.example.myproject.vo.RecordData;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;

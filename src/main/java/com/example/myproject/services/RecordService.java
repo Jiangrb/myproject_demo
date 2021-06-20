@@ -1,6 +1,7 @@
 package com.example.myproject.services;
 
 import com.example.myproject.vo.Record;
+import com.example.myproject.vo.RecordData;
 import com.example.myproject.vo.RecordField;
 import com.google.common.base.Joiner;
 import com.google.common.collect.Lists;
@@ -36,7 +37,6 @@ public class RecordService {
 
 
     public String buildRecoredCreateSql(Record record) {
-
         String sql = "CREATE TABLE IF NOT EXISTS `" + record.getTableName() + "`( $$$" +
                 ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci comment='" + record.getAnotherName() + "';";
         List<RecordField> recordDetail = record.getRecordDetail();

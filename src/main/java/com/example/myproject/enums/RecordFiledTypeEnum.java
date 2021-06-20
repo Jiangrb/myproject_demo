@@ -1,11 +1,10 @@
-package com.example.myproject;
+package com.example.myproject.enums;
 
 import com.google.common.collect.Maps;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
 
-import java.util.Locale;
 import java.util.Map;
 
 @AllArgsConstructor
