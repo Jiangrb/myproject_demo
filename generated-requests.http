@@ -50,3 +50,29 @@ Content-Type: application/json
   ],
   "tableName": "t_test_table"
 }
+
+
+### 查询
+
+# curl -X POST "http://localhost:8081/api/record/data/query" -H "accept: */*" -H "Content-Type: application/json" -d "{ \"databaseName\": \"myproject\", \"fields\": [ \"name\" ], \"tableName\": \"product\", \"whereConditons\": [ { \"key\": \"id\", \"operator\": \"=\", \"value\": \"1\" } ]}"
+POST http://localhost:8081/api/record/data/query
+accept: */*
+Content-Type: application/json
+
+{
+  "databaseName": "myproject",
+  "fields": [
+    "name"
+  ],
+  "tableName": "product",
+  "whereConditons": [
+    {
+      "key": "id",
+      "operator": "=",
+      "value": "1"
+    }
+  ]
+}
+
+###
+

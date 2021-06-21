@@ -1,15 +1,18 @@
 package com.example.myproject.controller.api;
 
 import com.example.myproject.services.RecordDataService;
-import com.example.myproject.vo.Record;
 import com.example.myproject.vo.RecordData;
+import com.example.myproject.vo.RecordQuery;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
+@Api("数据表记录操作API")
+@RestController
 @RequestMapping("/api/record/data")
 public class RecordDataController extends BaseController {
 
@@ -20,8 +23,14 @@ public class RecordDataController extends BaseController {
     @ApiImplicitParam(name = "recordData", value = "表接口配置", required = true, dataType = "RecordData")
     @PostMapping
     public String createRecord(@RequestBody RecordData recordData) {
-        boolean addResult = recordDataService.add(recordData);
-        return addResult ? "成功新增记录" : "失败";
+        return recordDataService.add(recordData);
+    }
+
+    @ApiOperation(value = "查询表记录", notes = "")
+    @ApiImplicitParam(name = "recordQuery", value = "查询接口", required = true, dataType = "RecordQuery")
+    @PostMapping("/query")
+    public Map<String, Object> queryRecord(@RequestBody RecordQuery recordQuery) {
+        return recordDataService.query(recordQuery);
     }
 
 }

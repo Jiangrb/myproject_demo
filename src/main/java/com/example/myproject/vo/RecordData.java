@@ -1,16 +1,18 @@
 package com.example.myproject.vo;
 
 import lombok.Data;
-import org.apache.commons.collections4.KeyValue;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotEmpty;
 import java.util.List;
+import java.util.Map;
 
 @Data
-public class RecordData {
+public class RecordData extends RecordBaseInfo {
 
-    private String databaseName;
-    private String tableName;
-    private List<KeyValue> keyValues;
+    @Valid
+    @NotEmpty(message = "keyValues 不能为空")
+    private List<Map<String, Object>> keyValues;
     private boolean ignoreIfExist;
     private boolean replaceIfExist;
 

@@ -9,11 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.lang.reflect.Type;
 import java.text.MessageFormat;
 
-/**
- * @version 1.0.0
- * @Author Ray
- * @date 2018/12/10 17:44
- */
+
 @Getter
 @Slf4j
 public enum GsonUtil {
@@ -28,7 +24,7 @@ public enum GsonUtil {
     PRETTY_JSON(new GsonBuilder().serializeNulls().setPrettyPrinting().create()),
     SIMPLE(new Gson());
 
-    private Gson gson;
+    private final Gson gson;
 
     GsonUtil(Gson gson) {
         this.gson = gson;

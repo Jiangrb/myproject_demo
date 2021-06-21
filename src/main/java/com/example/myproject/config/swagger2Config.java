@@ -38,7 +38,7 @@ public class swagger2Config {
                 // (第二种方式)扫描指定包中的swagger注解
                 .apis(RequestHandlerSelectors.basePackage("com.example.myproject.controller.api"))
                 // (第三种方式)扫描所有
-                .apis(RequestHandlerSelectors.any())
+//                .apis(RequestHandlerSelectors.any())
                 .paths(PathSelectors.any())
                 .build().enable(enable);
     }
@@ -47,7 +47,7 @@ public class swagger2Config {
         return new ApiInfoBuilder()
                 .title("Myproject接口文档")
                 .description("Myproject 研究中")
-                .termsOfServiceUrl("http://localhost:8081/")
+                .termsOfServiceUrl("http://localhost:8081/doc.html")
                 .contact(new Contact("Luffy Jiang", null, null))
                 .version("1.0")
                 .build();

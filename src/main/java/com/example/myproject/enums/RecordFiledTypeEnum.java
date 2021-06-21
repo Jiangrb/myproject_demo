@@ -36,7 +36,7 @@ public enum RecordFiledTypeEnum {
     LONGBLOB("LONGBLOB"),
     LONGTEXT("LONGTEXT");
 
-    private String type;
+    private final String type;
 
     private static Map<String, RecordFiledTypeEnum> typeMap;
 

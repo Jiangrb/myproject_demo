@@ -1,6 +1,7 @@
 package com.example.myproject.utils;
 
 
+import com.google.common.collect.Maps;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.validation.ConstraintViolation;
@@ -11,11 +12,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-/**
- * @Description: 实体校验工具类
- * @Author: luffy
- * @CreateDate: 2018/9/25 10:14
- */
+
 @Slf4j
 public class BeanValidateUtils {
 
@@ -40,7 +37,7 @@ public class BeanValidateUtils {
         Set<ConstraintViolation<T>> set = validator.validateProperty(obj, propertyName);
         if (set != null && !set.isEmpty()) {
             result.setHasErrors(true);
-            Map<String, String> errorMsg = new HashMap<String, String>();
+            Map<String, String> errorMsg = Maps.newHashMap();
             for (ConstraintViolation<T> cv : set) {
                 errorMsg.put(propertyName, cv.getMessage());
             }
