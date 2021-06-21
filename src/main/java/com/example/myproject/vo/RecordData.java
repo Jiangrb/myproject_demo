@@ -8,6 +8,7 @@ import java.util.List;
 @Data
 public class RecordData {
 
+    private String databaseName;
     private String tableName;
     private List<KeyValue> keyValues;
     private boolean ignoreIfExist;
